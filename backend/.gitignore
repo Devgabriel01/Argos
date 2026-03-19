@@ -1,0 +1,7 @@
+node_modules/
+dist/
+prisma/argos.db
+prisma/argos.db-journal
+.env
+fix-user.js
+check-user.js

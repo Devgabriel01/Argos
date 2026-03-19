@@ -1,0 +1,76 @@
+/* src/app/globals.css */
+/* Fontes: IBM Plex Sans para corpo, JetBrains Mono para dados e códigos */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0b0f;
+  --surface: #111318;
+  --border: #1e2130;
+  --muted: #2a2d3e;
+  --text: #e2e4ef;
+  --dim: #8891b4;
+  --accent: #4f7ef8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Scrollbar estilizada para combinar com o tema escuro */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dim);
+}
+
+/* Animação de entrada dos cards */
+.card-enter {
+  animation: slideUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid de fundo sutil — textura técnica */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(79, 126, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 126, 248, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
